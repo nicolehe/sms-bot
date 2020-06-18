@@ -1,0 +1,16 @@
+{
+	"plugins": ["googleappsscript"],
+	"env": {
+		"googleappsscript/googleappsscript": true
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"indent": ["error", "tab"],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"],
+		// "no-unused-vars": "off",
+		"no-undef": "off",
+		"no-console": "off"
+	}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "smsbot",
+  "version": "1.0.0",
+  "description": "a google sheets web app and sidebar for a spreadsheet that lets you make an sms bot with a twilio phone number",
+  "main": "Code.js",
+  "dependencies": {
+    "eslint": "^7.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolehe/sms-bot.git"
+  },
+  "author": "Nicole He",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicolehe/sms-bot/issues"
+  },
+  "homepage": "https://github.com/nicolehe/sms-bot#readme"
+}

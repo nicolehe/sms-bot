@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 18px;
+            letter-spacing: -0.3px;
+            color: #80868B;
+        }
+
+        textarea {
+            background: #FFFFFF;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 18px;
+            padding: 7px;
+            letter-spacing: -0.2px;
+            color: #899AF5;
+            border: 1px solid #BDC1C6;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-weight: normal;
+            border-radius: 4px;
+            resize: none;
+            margin: 5px 0px;
+        }
+
+        textarea::placeholder {
+            color: #DADCE0;
+
+        }
+
+        textarea:focus {
+            outline: none;
+            border: 1px solid #899AF5;
+        }
+
+        h2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-style: normal;
+            font-size: 26px;
+            line-height: 24px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            letter-spacing: -0.6px;
+            color: #899AF5;
+        }
+
+        a {
+            color: #63DD47;
+            text-decoration-line: underline;
+        }
+
+        a:hover {
+            color: #23BD00;
+        }
+
+        hr {
+            border: 1px solid #DADCE0;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 5px 0px;
+            outline: none;
+        }
+
+        button:disabled {
+            opacity: 0.35;
+        }
+
+        .sidebar {
+            padding: 10px;
+            align-items: center;
+        }
+
+
+
+        .working {
+            filter: blur(5px);
+        }
+
+        .webapp-textarea {
+            width: 100%;
+        }
+
+        .question-textarea {
+            width: 234px;
+        }
+
+        .remove {
+            font-size: 10px;
+            background-color: #FFFFFF;
+            border: none;
+        }
+
+        .remove:hover {
+            background: rgba(137, 154, 245, 0.35);
+        }
+
+        .question-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .small-button {
+            background: #899AF5;
+            border: 1px solid #899AF5;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-style: normal;
+            font-size: 12px;
+            line-height: 15px;
+            padding: 6px 13px;
+            color: #FFFFFF;
+        }
+
+        .small-button:hover:enabled {
+            background: #526AEE;
+        }
+
+        .small-button:active:enabled {
+            background: #526AEE;
+        }
+
+        .emoji {
+            font-size: 12px;
+        }
+
+        #working-indicator {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 90px;
+            color: white;
+            transform: translate(-50%, -50%);
+            transform: -webkit-translate(-50%, -50%);
+            transform: -moz-translate(-50%, -50%);
+            transform: -ms-translate(-50%, -50%);
+            z-index: 9999;
+            background: #63DD47;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+            border-radius: 100px;
+            font-family: Source Sans Pro;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 18px;
+            /* identical to box height, or 129% */
+            text-align: center;
+            letter-spacing: -0.2px;
+            padding: 10px 24px;
+            display: none;
+        }
+
+        #add-to-spreadsheet {
+
+            background: #63DD47;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 16px;
+            padding: 7px 20px;
+            color: #FFFFFF;
+            border: 1px solid #63DD47;
+            box-sizing: border-box;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        #add-to-spreadsheet:hover {
+            background: #23BD00;
+        }
+
+        #plus {
+            font-size: 18px;
+            vertical-align: bottom;
+        }
+
+        #how-to-link {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 48px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        #add-info-span {
+            padding: 20px 0px 05px 0px;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div id="working-indicator">Working...</div>
+        <div id="content">
+            <h2>Webhook URL for Twilio</h2>
+            <span id="how-to-link"><span class="emoji">&#128279;</span> <a
+                    href="https://docs.google.com/document/d/1VzUsLofQVlP68wWKzUAmFO701I14hZpBZLIml1aWs7E/edit#bookmark=id.cs7sm9ldpmqh"
+                    target="_blank"> See this section in the How To Guide</a></span>
+            <br>
+            <div id="web-app-url-div">
+                <div class="block form-group" id="web-app-url-block">
+                    <label for="web-app-url">Paste the web app url here:</label>
+                    <textarea id="web-app-url" class="webapp-textarea" rows="3" cols="33"
+                        placeholder='It should start with "https://script.google.com/macros/s"'></textarea>
+                </div>
+                <button id="generate-url-button" class="generate-url-button small-button" disabled>Generate URL For
+                    Twilio</button>
+                <br>
+                <div id="webhook-url">
+                    <div class="block form-group" id="webhook-block">
+
+                        <textarea id="url" class="webapp-textarea" rows="5" cols="33"
+                            placeholder="Your URL for Twilio will appear here"></textarea>
+                        <br>
+                        <label for="url">Now copy the above URL, then head to Twilio and paste it into the field. All
+                            set!</label>
+                    </div>
+                    <hr>
+                    <p></p>
+                    <h2>SMS Bot Questions</h2>
+
+                    <p><span><span class="emoji">&#128394;</span> Write the messages your bot will send in the order
+                            they
+                            will be sent.</span></p>
+
+                    <p><span><span class="emoji">&#128276;</span> Don't forget to end with a goodbye message to let them
+                            know the interaction is
+                            over!</span></p>
+                    <div id="questions">
+                    </div>
+
+                </div>
+
+
+                <div class="block" id="sidebar-button-bar">
+                    <button id="add-another-question" class="small-button"><span id="plus"> + </span> Add another
+                        question</button>
+                </div>
+
+                <span id="add-info-span">Click the button below to replace any existing questions in the spreadsheet
+                    with
+                    the ones you entered above <span class="emoji">&#128071;</span></span>
+                <button id="add-to-spreadsheet">Add questions to spreadsheet</button>
+
+            </div>
+        </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+
+            var questionIDCount = 0;
+            var QUESTION_TEMPLATE = '<div class="block form-group question-block" id="question-block-NUM"><textarea class="question-textarea" id="question-NUM" rows="3" cols="33" placeholder="Your question or message here">QUESTION_TEXT</textarea><button id="NUM" class="remove" onclick="onRemoveButtonClick(NUM)">&#128465;</button></div>';
+
+            var DEFAULT_QUESTIONS = ["Thanks for texting the SMS Bot! To get started, please tell me your first name.", "What city do you live in?", "Thank you. We'll will reach out to you shortly."];
+
+            /**
+             * Run initializations on sidebar load.
+             */
+            $(function () {
+
+                $("#add-another-question").click(onAddAnotherQuestion);
+                $("#add-to-spreadsheet").click(onAddToSpreadsheet);
+                $("#generate-url-button").click(onGenerateUrlClick);
+
+                // checks that the textarea has the correct type of input before enabling the button
+                $("#web-app-url").on("input", function (e) {
+                    if (e.target.value.includes("https://script.google.com/macros/s")) {
+                        $("#generate-url-button").prop('disabled', false);
+                    }
+                })
+
+                addTextAreaResizeHandler();
+                getExistingQuestions();
+            });
+
+            /**
+             * Adds any existing questions from the spreadsheet to the sidebar.
+             * If none are found, add the default questions.
+             */
+            function getExistingQuestions() {
+                $("#working-indicator").show();
+                $("#content").addClass("working");
+                google.script.run.withSuccessHandler(function (questions, element) {
+                    // got existing questions
+                    if (questions == null) {
+                        addQuestionsToSidebar(DEFAULT_QUESTIONS);
+                    } else {
+                        $("#questions").empty();
+
+                        addQuestionsToSidebar(questions);
+                    }
+                    $("#working-indicator").hide();
+                    $("#content").removeClass("working");
+                    element.disabled = false;
+                })
+                    .withFailureHandler(function (msg, element) {
+                        // there are no existing quesåtions
+
+                        addQuestionsToSidebar(DEFAULT_QUESTIONS);
+                        $("#working-indicator").hide();
+                        $("#content").removeClass("working");
+                        element.disabled = false;
+                    })
+                    .withUserObject(this)
+                    .findExistingQuestions();
+
+            };
+
+            /**
+             * Grabs the spreadsheet ID and creates a URL for the user to add to the Twilio feed.
+             */
+            function onGenerateUrlClick() {
+                $("#working-indicator").show();
+                $("#content").addClass("working");
+                google.script.run.withSuccessHandler(function (spreadsheetID, element) {
+
+                    var webAppUrl = $("#web-app-url").val();
+                    var webhookUrl = webAppUrl + "?spreadsheetID=" + spreadsheetID;
+
+                    $("#url").val(webhookUrl);
+                    $("#working-indicator").hide();
+                    $("#content").removeClass("working");
+                    element.disabled = false;
+                })
+                    .withFailureHandler(function (msg, element) {
+                        $("#working-indicator").hide();
+                        $("#content").removeClass("working");
+                        element.disabled = false;
+                    })
+                    .withUserObject(this)
+                    .getProperty("spreadsheet_id");
+            };
+
+            /**
+             * Grabs the questions filled out in the sidebar and adds them to the sheet.
+             */
+            function onAddToSpreadsheet() {
+                $("#working-indicator").show();
+                $("#content").addClass("working");
+                var questions = [];
+
+                $(".question-textarea").each(function () {
+                    questions.push($(this).val());
+                });
+
+                google.script.run.withSuccessHandler(function (msg, element) {
+                    $("#working-indicator").hide();
+                    $("#content").removeClass("working");
+                    element.disabled = false;
+                })
+                    .withFailureHandler(function (msg, element) {
+                        $("#working-indicator").hide();
+                        $("#content").removeClass("working");
+                        element.disabled = false;
+                    })
+                    .withUserObject(this)
+                    .addQuestionsFromSidebarToSheet(questions);
+            };
+
+            /**
+             * Removes a question text field.
+             */
+            function onRemoveButtonClick(num) {
+                var blockID = "#question-block-" + num;
+                $(blockID).remove();
+            };
+
+            /**
+             * Adds an empty question textarea to the sidebar.
+             */
+            function onAddAnotherQuestion() {
+                addQuestionsToSidebar([""]);
+            };
+
+            /**
+             * Adds questions to the sidebar.
+             */
+            function addQuestionsToSidebar(questions) {
+                questions.forEach(function (question, index) {
+                    questionIDCount++;
+
+                    var questionTemplateParsed = QUESTION_TEMPLATE;
+                    questionTemplateParsed = questionTemplateParsed.replace(/NUM/g, questionIDCount).replace("QUESTION_TEXT", question);
+                    $("#questions").append(questionTemplateParsed);
+                    addTextAreaResizeHandler();
+
+                });
+            };
+
+            /**
+             * Adds a resize handler to each text area, allowing it to resize with its contents.
+             */
+            function addTextAreaResizeHandler() {
+                $('textarea').each(function () {
+                    this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+                }).on('input', function () {
+                    this.style.height = 'auto';
+                    this.style.height = (this.scrollHeight) + 'px';
+                });
+            }
+
+        </script>
+</body>
+
+</html>
