@@ -1,2 +1,5 @@
 node_modules
 .clasp.json
+.eslintrc
+.package.json
+package-lock.json
