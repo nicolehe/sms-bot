@@ -2,7 +2,7 @@
 
 ![sms bot gif](http://nicole.pizza/img/sms-bot-gif-fast.gif)
 
-🤖 [sms-bot.info](sms-bot.info) is a how-to guide to making an SMS bot with Google Sheets and Twilio. You write the messages your bot will send in a Google sheet, which is also where people's responses are saved.
+🤖 [sms-bot.info](https://sms-bot.info) is a how-to guide to making an SMS bot with Google Sheets and Twilio. You write the messages your bot will send in a Google sheet, which is also where people's responses are saved.
 
 The project is built using [Google Apps Script](https://developers.google.com/apps-script). It creates:
 
@@ -13,7 +13,7 @@ It's meant to be used with [this template spreadsheet](https://template.sms-bot.
 
 ## Getting Started
 
-The document at [sms-bot.info](sms-bot.info) gives detailed instructions on how to set up the project - it's written such that the user doesn't have to write code (though they do have to copy and paste some code). It's recommended that you follow the document even if you are a developer, though instead of copying and pasting the code you may want to clone this repo and use Google's [clasp](https://github.com/google/clasp/) to develop locally.
+The document at [sms-bot.info](https://sms-bot.info) gives detailed instructions on how to set up the project - it's written such that the user doesn't have to write code (though they do have to copy and paste some code). It's recommended that you follow the document even if you are a developer, though instead of copying and pasting the code you may want to clone this repo and use Google's [clasp](https://github.com/google/clasp/) to develop locally.
 
 ### Prerequisites
 
